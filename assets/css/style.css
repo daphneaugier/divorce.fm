@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: url('../images/bg1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.title-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.player {
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.controls {
+    margin: 20px;
+}
+
+.control-button {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.control-button:active {
+    opacity: 0.6;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divorce.fm</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <img src="assets/images/title.png" alt="Divorce.fm - We Love Music" class="title-image">
+    </header>
+    <main>
+        <div class="player" id="player">
+            <iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/YOUR_TRACK_ID&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+            </iframe>
+        </div>
+        <div class="controls">
+            <img id="play" src="assets/images/buttonplay.png" alt="Play" class="control-button">
+            <img id="pause" src="assets/images/buttondot.png" alt="Pause" class="control-button">
+            <img id="next" src="assets/images/buttonnext.png" alt="Next" class="control-button">
+        </div>
+    </main>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
