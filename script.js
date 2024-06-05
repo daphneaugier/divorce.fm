@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadTrack(trackUrl) {
         const playerContainer = document.getElementById('player');
-        playerContainer.innerHTML = '';
+        playerContainer.innerHTML = '<img src="assets/images/textfield.png" alt="Track Title Placeholder" class="track-title">';
 
         widget = SC.Widget(playerContainer);
         widget.load(trackUrl, {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextButton.src = "assets/images/buttonnext_pressed.png";
         currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
         loadTrack(tracks[currentTrackIndex]);
-    }
+    }    
 
     playButton.addEventListener('click', playTrack);
     pauseButton.addEventListener('click', pauseTrack);

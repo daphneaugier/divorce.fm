@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -8,28 +7,28 @@ body {
 }
 
 header {
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 }
 
-.title-image {
-    max-width: 100%;
-    height: auto;
-}
-
-.player-container {
+.title {
+    width: 80%;
+    max-width: 1200px;
     margin-top: 10em;
 }
 
-.player {
-    margin: 20px;
+.player-container {
+    margin: 30px;
+    margin-top: 220px;
     padding: 10px;
     display: inline-block;
     border-radius: 10px;
 }
 
-.controls {
-    margin: 20px;
+.player {
+    display: inline;
+    height: 50px;
 }
+
 
 .control-button {
     margin: 5px;
