@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currentTrackIndex = 0,
         tracks = [
             'https://api.soundcloud.com/tracks/keziahhhhhhhhhhhh/miami-mix-1',
-            'https://api.https://soundcloud.com/keziahhhhhhhhhhhh/pour-les-amis-mix-2'
+            'https://api.soundcloud.com/tracks/keziahhhhhhhhhhhh/pour-les-amis-mix-2'
         ];
 
     function loadTrack(trackUrl) {
@@ -21,18 +21,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    playButton.addEventListener('click', function () {
+    function playTrack() {
+        playButton.src = "assets/images/buttonplay_pressed.png";
         if (widget) widget.play();
-    });
+    }
 
-    pauseButton.addEventListener('click', function () {
+    function pauseTrack() {
+        pauseButton.src = "assets/images/buttondot_pressed.png";
         if (widget) widget.pause();
-    });
+    }
 
-    nextButton.addEventListener('click', function () {
+    function nextTrack() {
+        nextButton.src = "assets/images/buttonnext_pressed.png";
         currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
         loadTrack(tracks[currentTrackIndex]);
-    });
+    }
+
+    playButton.addEventListener('click', playTrack);
+    pauseButton.addEventListener('click', pauseTrack);
+    nextButton.addEventListener('click', nextTrack);
 
     loadTrack(tracks[currentTrackIndex]);
 });
