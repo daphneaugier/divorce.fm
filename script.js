@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var widget,
+    let widget,
         playButton = document.getElementById('play'),
         pauseButton = document.getElementById('pause'),
         nextButton = document.getElementById('next'),
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
 
     function loadTrack(trackUrl) {
-        var playerContainer = document.getElementById('player');
+        const playerContainer = document.getElementById('player');
         playerContainer.innerHTML = '';
 
         widget = SC.Widget(playerContainer);

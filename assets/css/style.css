@@ -3,7 +3,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background: url('../images/bg1.jpg') no-repeat center top fixed;
+    background: url('../images/bg1.jpg') no-repeat top center ;
     background-size: cover;
 }
 
@@ -16,18 +16,8 @@ header {
     height: auto;
 }
 
-.background-container {
-    position: relative;
-    z-index: -1;
-}
-
-.background-image {
-    display: block;
-    width: 100%;
-}
-
 .player-container {
-    position: relative;
+    margin-top: 10em;
 }
 
 .player {
