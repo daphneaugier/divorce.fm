@@ -5,29 +5,28 @@ document.addEventListener("DOMContentLoaded", function () {
         nextButton = document.getElementById('next'),
         currentTrackIndex = 0,
         tracks = [
-            'https://api.soundcloud.com/tracks/keziahhhhhhhhhhhh/miami-mix-1',
-            'https://api.soundcloud.com/tracks/keziahhhhhhhhhhhh/pour-les-amis-mix-2'
+            'https://soundcloud.com/divorce-fm/webinar-tm-06-euphoria',
+            'https://soundcloud.com/divorce-fm/webinar-tm-12-zetta',
+            'https://soundcloud.com/divorce-fm/trivial-pursuit-wii-theme-5',
+            'https://soundcloud.com/divorce-fm/trivial-pursuit-wii-theme-1'
         ];
 
     function loadTrack(trackUrl) {
-        const playerContainer = document.getElementById('player');
-        playerContainer.innerHTML = '<img src="assets/images/textfield.png" alt="Track Title Placeholder" class="track-title">';
+        const iframe = document.getElementById('sc-widget');
+        iframe.src = `https://w.soundcloud.com/player/?url=${trackUrl}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`;
 
-        widget = SC.Widget(playerContainer);
-        widget.load(trackUrl, {
-            auto_play: false,
-            show_comments: true,
-            show_user: true
-        });
+        widget = SC.Widget(iframe);
     }
 
     function playTrack() {
         playButton.src = "assets/images/buttonplay_pressed.png";
+        pauseButton.src = "assets/images/buttonpause.png";
         if (widget) widget.play();
     }
 
     function pauseTrack() {
-        pauseButton.src = "assets/images/buttondot_pressed.png";
+        pauseButton.src = "assets/images/buttonpause_pressed.png";
+        playButton.src = "assets/images/buttonplay.png";
         if (widget) widget.pause();
     }
 
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextButton.src = "assets/images/buttonnext_pressed.png";
         currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
         loadTrack(tracks[currentTrackIndex]);
-    }    
+    }
 
     playButton.addEventListener('click', playTrack);
     pauseButton.addEventListener('click', pauseTrack);

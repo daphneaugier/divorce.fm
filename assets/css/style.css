@@ -2,12 +2,14 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background: url('../images/bg1.jpg') no-repeat top center ;
-    background-size: cover;
+    background: url('../images/bg1.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
 header {
-    margin-bottom: 2px;
+    margin-bottom: 20px;
 }
 
 .title {
@@ -17,18 +19,21 @@ header {
 }
 
 .player-container {
-    margin: 30px;
-    margin-top: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px auto;
+    margin-top: 20px;
     padding: 10px;
-    display: inline-block;
     border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
 }
 
-.player {
-    display: inline;
-    height: 50px;
+.track-title {
+    width: 80%;
+    max-width: 200px;
 }
-
 
 .control-button {
     margin: 5px;
@@ -39,4 +44,40 @@ header {
 
 .control-button:active {
     opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .player-container {
+        width: 90%;
+    }
+
+    .control-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .track-title {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .control-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .track-title {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    header {
+        margin-bottom: 10px;
+    }
 }
