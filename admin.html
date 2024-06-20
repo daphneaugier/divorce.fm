@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divorce.fm</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+    <main>
+        <form id="background-form">
+            <h2>Upload New Background Image</h2>
+            <input type="file" id="background-image" name="background-image" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+        <form id="tracks-form">
+            <h2>Add New SoundCloud Link</h2>
+            <label for="track-url">SoundCloud URL:</label>
+            <input type="url" id="track-url" name="track-url" required>
+            <button type="submit">Add</button>
+        </form>
+    </main>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
