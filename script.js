@@ -1,3 +1,11 @@
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     let widget,
         playButton = document.getElementById('play'),
@@ -41,12 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
     nextButton.addEventListener('click', nextTrack);
 
     loadTrack(tracks[currentTrackIndex]);
-
-    function openForm() {
-        document.getElementById("myForm").style.display = "block";
-      }
-      
-      function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-      }
 });
