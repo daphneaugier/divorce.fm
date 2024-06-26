@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>divorce.fm</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -56,26 +57,28 @@
     </main>
 
     <!-- Admin Panel -->
-        <button class="open-button" onclick="openForm()">fuck love</button>
-        
-        <div class="form-popup" id="myForm">
-          <form action="/admin.php" method="POST" class="form-container">
-            <h1>Login</h1>
-        
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-        
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-          </form>
-        </div>
-        
+    <button class="open-button" onclick="openForm()">fuck love</button>
+    <div class="form-popup" id="myForm">
+        <form action="/admin.php" method="POST" class="form-container">
+            <div class="form-group">
+                <label for="username"><b>Username</b></label>
+                <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
+            </div>
 
+            <div class="form-group">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-sucess">Login</button>
+            <button type="button" class="btn btn-secondary btn-secondary" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="/script.js"></script>
-    <script src="/admin.js"></script>
 </body>
 </html>

@@ -6,6 +6,10 @@
     <title>Divorce.fm Admin Panel</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <style>
         body {
@@ -34,8 +38,8 @@
         }
 
         .form-container {
-            max-width: 400px; /* Adjust as needed */
-            margin: 0 auto; /* Center align the form */
+            max-width: 400px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -62,30 +66,31 @@
             </form>
 
             <?php 
-                if(isset($_POST["submit"])) {
-                    $target_dir = "assets/images/bg/";
-                    $target_file = $target_dir . basename($_FILES["file"]["name"]);
-                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-                    $check = getimagesize($_FILES["file"]["tmp_name"]);
-                    
-                    if($check !== false) {
+                    $target_dir = "/var/www/html/assets/images/bg/";
+                    // Check if image file is a actual image or fake image
+                    if(isset($_POST["submit"])) {
+                        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+                        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                        $check = getimagesize($_FILES["file"]["tmp_name"]);
+                      if($check !== false) {
                         if (file_exists($target_file)) {
-                            echo "<div class='alert alert-warning'>Sorry, file already exists.</div>";
-                        } else {
+                            echo "Sorry, file already exists.";
+                          }else{
+                            // Check file size
                             if ($_FILES["file"]["size"] > 500000) {
-                                echo "<div class='alert alert-warning'>Sorry, your file is too large.</div>";
-                            } else {
+                                echo "Sorry, your file is too large.";
+                            }else{
                                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-                                    echo "<div class='alert alert-success'>The file " . htmlspecialchars(basename($_FILES["file"]["name"])) . " has been uploaded.</div>";
-                                } else {
-                                    echo "<div class='alert alert-danger'>Sorry, there was an error uploading your file.</div>";
-                                }
+                                    echo "The file ". htmlspecialchars( basename( $_FILES["file"]["name"])). " has been uploaded.";
+                                  } else {
+                                    echo "Sorry, there was an error uploading your file.";
+                                  }
                             }
-                        }
-                    } else {
-                        echo "<div class='alert alert-danger'>File is not an image.</div>";
+                          }
+                      } else {
+                        echo "File is not an image.";
+                      }
                     }
-                }
             ?>
         </main>
     </div>
